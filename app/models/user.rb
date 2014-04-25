@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
 	before_validation :ensure_session_token
 	validates :email, uniqueness: true, presence: true
 	validates :session_token, presence: true
-
+	#add password length validation later
+	
 	def self.generate_session_token
 		SecureRandom::urlsafe_base64(16)
 	end 
