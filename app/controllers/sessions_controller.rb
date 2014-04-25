@@ -6,10 +6,4 @@ class SessionsController < ApplicationController
 		redirect_to user_url
 	end
 
-	private
-
-	def session_params
-		params.require(:session)
-
-
 end
