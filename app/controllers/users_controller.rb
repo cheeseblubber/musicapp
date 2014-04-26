@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    render :index
+  end
+
   def new
     render :new
   end 
@@ -11,11 +15,9 @@ class UsersController < ApplicationController
     	redirect_to user_url
     else
     	flash[:errors] = @user.errors.full_messages
-    	render :new
+    	redirect_to users_url
     end
   end
-
-
 
   private
 

@@ -1,0 +1,17 @@
+<h1> New Album </h1> 
+
+<form action="<%= band_albums_url(@album.band_id) %>" method="post">
+  <%= auth_token_input %>
+
+  <select>
+    <% Band.all.each do |band| %>
+      <option <%= default_option?(band, @album.band_id) %> > <%= band.name %> </option>
+    <% end %>
+  </select>
+
+  <input type="text" 
+  name="album[name]" 
+  id ="album_name"
+  value="<%= @album.album_name%>">
+  <input type="submit">
+</form>
